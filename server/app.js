@@ -6,6 +6,11 @@ const io = require("socket.io")(server, {
 
 io.on("connection", socket => {
   console.log("IO Connected");
+  socket.on("CREATE_MESSAGE", data => {
+    setTimeout(() => {
+      socket.emit("NEW_MESSAGE", { text: data.text + " SERVER" });
+    }, 500);
+  });
   socket.emit("NEW_MESSAGE", { text: "WHAT" });
 });
 
