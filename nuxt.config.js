@@ -5,7 +5,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    titleTemplate: "%s - " + process.env.npm_package_name,
+    titleTemplate: "%s",
     title: process.env.npm_package_name || "",
     meta: [
       { charset: "utf-8" },
@@ -50,6 +50,7 @@ module.exports = {
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
+      dark: true,
       primary: colors.blue.darken2,
       accent: colors.grey.darken3,
       secondary: colors.amber.darken3,
